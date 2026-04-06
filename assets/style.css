@@ -5,63 +5,63 @@
 
 /* ── CSS Variables ────────────────────────────────── */
 :root {
-  /* Paleta principal — índigo claro profesional */
+  /* Paleta Urgencia — rojo sobre negro */
   --color-primary:        #E63946;
-  --color-primary-light:  #EFF6FF;
-  --color-primary-mid:    #3B82F6;
-  --color-primary-dark:   #1D4ED8;
+  --color-primary-light:  #2A1012;
+  --color-primary-mid:    #FF6B6B;
+  --color-primary-dark:   #C62828;
 
-  /* Acento — verde esmeralda */
-  --color-accent:         #10B981;
-  --color-accent-light:   #ECFDF5;
+  /* Acento — ámbar urgencia */
+  --color-accent:         #FFB300;
+  --color-accent-light:   #2A2210;
 
   /* Tipos de entidad */
-  --color-directo:        #2563EB;
-  --color-directo-bg:     #EFF6FF;
-  --color-broker:         #7C3AED;
-  --color-broker-bg:      #F5F3FF;
+  --color-directo:        #FF6B6B;
+  --color-directo-bg:     #2A1012;
+  --color-broker:         #CE93D8;
+  --color-broker-bg:      #1A1225;
 
   /* Badges especiales */
-  --color-free:           #F59E0B;
-  --color-free-bg:        #FFFBEB;
-  --color-asnef:          #10B981;
-  --color-asnef-bg:       #ECFDF5;
-  --color-nomina:         #6366F1;
-  --color-nomina-bg:      #EEF2FF;
-  --color-speed:          #0EA5E9;
-  --color-speed-bg:       #F0F9FF;
+  --color-free:           #FFB300;
+  --color-free-bg:        #2A2210;
+  --color-asnef:          #66BB6A;
+  --color-asnef-bg:       #122A14;
+  --color-nomina:         #7986CB;
+  --color-nomina-bg:      #121428;
+  --color-speed:          #4FC3F7;
+  --color-speed-bg:       #0A1A2A;
 
   /* Textos */
-  --color-text:           #111827;
-  --color-text-muted:     #6B7280;
-  --color-text-light:     #9CA3AF;
+  --color-text:           #EDEDED;
+  --color-text-muted:     #9E9E9E;
+  --color-text-light:     #757575;
 
   /* Fondos */
-  --color-bg:             #F9FAFB;
-  --color-surface:        #FFFFFF;
-  --color-surface-alt:    #F3F4F6;
+  --color-bg:             #0D0D0D;
+  --color-surface:        #1A1A1A;
+  --color-surface-alt:    #242424;
 
   /* Bordes */
-  --color-border:         #E5E7EB;
-  --color-border-strong:  #D1D5DB;
+  --color-border:         #2E2E2E;
+  --color-border-strong:  #3A3A3A;
 
   /* Sombras */
-  --shadow-sm:   0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
-  --shadow-md:   0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
-  --shadow-lg:   0 10px 30px rgba(0,0,0,.10), 0 4px 8px rgba(0,0,0,.04);
-  --shadow-card: 0 2px 8px rgba(37,99,235,.06), 0 1px 3px rgba(0,0,0,.06);
-  --shadow-card-hover: 0 8px 24px rgba(37,99,235,.12), 0 2px 6px rgba(0,0,0,.06);
+  --shadow-sm:   0 1px 3px rgba(0,0,0,.4);
+  --shadow-md:   0 4px 12px rgba(0,0,0,.5);
+  --shadow-lg:   0 10px 30px rgba(0,0,0,.6);
+  --shadow-card: 0 2px 8px rgba(230,57,70,.08), 0 1px 3px rgba(0,0,0,.3);
+  --shadow-card-hover: 0 8px 24px rgba(230,57,70,.2), 0 2px 6px rgba(0,0,0,.4);
 
   /* Radios */
-  --radius-sm:   6px;
-  --radius-md:   12px;
-  --radius-lg:   16px;
-  --radius-xl:   24px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
   --radius-full: 9999px;
 
   /* Tipografía */
-  --font-sans: 'Figtree', system-ui, -apple-system, sans-serif;
-  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Roboto', system-ui, -apple-system, sans-serif;
+  --font-display: 'Oswald', Impact, sans-serif;
 
   /* Transiciones */
   --transition: 0.18s ease;
@@ -1218,4 +1218,147 @@ img, svg { display: block; max-width: 100%; }
 
 .pais-card strong {
   color: var(--color-text);
+}
+
+/* ══════════════════════════════════════════════════
+   THEME: URGENCY / ALERT — creditosurgentes.pro
+   ══════════════════════════════════════════════════ */
+
+/* Urgency Bar */
+.urgency-bar {
+  background: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  animation: urgencyPulse 3s ease-in-out infinite;
+}
+@keyframes urgencyPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .85; }
+}
+
+/* Uppercase headings */
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Dark header */
+#header {
+  background: rgba(13,13,13,0.95);
+  border-bottom: 1px solid var(--color-border);
+}
+@media (max-width: 767px) {
+  .nav-links {
+    background: rgba(13,13,13,0.98);
+  }
+}
+
+/* Diagonal pattern hero */
+#hero {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 20px,
+      rgba(230,57,70,.06) 20px,
+      rgba(230,57,70,.06) 22px
+    ),
+    linear-gradient(180deg, #1A1A1A 0%, #0D0D0D 100%);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.hero-label {
+  background: rgba(230,57,70,.15);
+  color: var(--color-primary-mid);
+  border-color: rgba(230,57,70,.3);
+}
+
+#hero h1 em { color: var(--color-primary); }
+
+/* Red glow buttons */
+.btn-primary, .btn-search {
+  background: var(--color-primary);
+  box-shadow: 0 0 20px rgba(230,57,70,.4), 0 2px 8px rgba(230,57,70,.3);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+.btn-primary:hover, .btn-primary:focus-visible,
+.btn-search:hover {
+  background: var(--color-primary-dark);
+  box-shadow: 0 0 30px rgba(230,57,70,.6), 0 4px 16px rgba(230,57,70,.4);
+}
+
+.btn-solicitar {
+  box-shadow: 0 0 16px rgba(230,57,70,.35);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.btn-solicitar:hover {
+  box-shadow: 0 0 24px rgba(230,57,70,.5);
+}
+
+/* Left-border cards */
+.result-card {
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+.result-card:hover {
+  border-left-color: var(--color-primary-mid);
+  box-shadow: 0 0 20px rgba(230,57,70,.15), var(--shadow-card-hover);
+}
+
+/* Search box dark */
+.search-box {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+/* Filter buttons */
+.country-tab, .plazo-btn, .tipo-btn, .extra-btn {
+  border-radius: var(--radius-sm);
+}
+.country-tab.active, .plazo-btn.active, .tipo-btn.active {
+  box-shadow: 0 0 12px rgba(230,57,70,.3);
+}
+
+/* Step numbers */
+.step-number {
+  background: var(--color-primary);
+  box-shadow: 0 0 12px rgba(230,57,70,.3);
+}
+
+/* Cards in sections */
+.step, .edu-card, .faq-item, .pais-card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+.faq-item[open] {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 12px rgba(230,57,70,.1);
+}
+
+/* Glossary search */
+.glossary-search {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
+}
+
+/* Footer - already dark, keep as-is */
+#footer {
+  background: #0A0A0A;
+  border-top: 2px solid var(--color-primary);
+}
+
+/* Cookie banner */
+.cookie-banner {
+  background: #1A1A1A;
+  border-top: 1px solid var(--color-border);
 }
